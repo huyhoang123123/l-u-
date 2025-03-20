@@ -1,0 +1,24 @@
+import turtle
+import random
+
+def ve_spiral(n_step=100, speed=0, size=2):
+    """Vẽ hoa văn xoắn ốc nhiều màu bằng turtle."""
+    screen = turtle.Screen()
+    screen.bgcolor("black")  # Màu nền đen
+
+    pen = turtle.Turtle()
+    pen.speed(speed)  # 0 là nhanh nhất
+    pen.width(2)
+
+    colors = ["red", "yellow", "blue", "green", "purple", "orange", "pink", "cyan"]
+
+    for i in range(n_step):
+        pen.color(random.choice(colors))
+        pen.forward(size + i*2)
+        pen.left(59)  # góc xoay
+    pen.hideturtle()
+    turtle.done()
+
+if __name__ == "__main__":
+    # Tùy chỉnh các tham số nếu muốn
+    ve_spiral(n_step=200, speed=0, size=2)
